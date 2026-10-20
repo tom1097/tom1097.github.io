@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tom Pham · Fullstack Engineer</title>
+<meta name="description" content="Pham Van Toi (Tom Pham), fullstack engineer in Ho Chi Minh City with 7+ years in PHP, Node.js, Vue.js, SQL Server, MySQL and Microsoft Azure.">
+<meta property="og:title" content="Tom Pham · Fullstack Engineer">
+<meta property="og:description" content="7+ years building web applications for enterprise clients in the UK, Japan and China.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://tom1097.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --text: #1c1917;
+  --muted: #57534e;
+  --faint: #a8a29e;
+  --line: #e7e5e4;
+  --accent: #0f766e;
+  --accent-soft: #ccfbf1;
+  --chip: #f5f5f4;
+  --shadow: 0 1px 2px rgba(28, 25, 23, .04), 0 4px 16px rgba(28, 25, 23, .04);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c0a09;
+    --surface: #1c1917;
+    --text: #f5f5f4;
+    --muted: #a8a29e;
+    --faint: #78716c;
+    --line: #292524;
+    --accent: #2dd4bf;
+    --accent-soft: #134e4a;
+    --chip: #292524;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c0a09;
+  --surface: #1c1917;
+  --text: #f5f5f4;
+  --muted: #a8a29e;
+  --faint: #78716c;
+  --line: #292524;
+  --accent: #2dd4bf;
+  --accent-soft: #134e4a;
+  --chip: #292524;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+header.top {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 56px; }
+.brand { font-weight: 700; color: var(--text); letter-spacing: -.01em; }
+nav { display: flex; gap: 18px; align-items: center; font-size: 14px; }
+nav .nav-links { display: flex; gap: 18px; }
+nav a { color: var(--muted); }
+nav a:hover { color: var(--text); text-decoration: none; }
+.icon-btn {
+  border: 1px solid var(--line); background: var(--surface); color: var(--text);
+  width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+  display: inline-grid; place-items: center;
+}
+.icon-btn svg { width: 16px; height: 16px; }
+.hero { padding: 64px 0 40px; }
+.hero .role {
+  font: 500 13px/1 "JetBrains Mono", ui-monospace, monospace;
+  color: var(--accent); text-transform: uppercase; letter-spacing: .08em;
+}
+.hero h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 14px 0 6px; letter-spacing: -.03em; }
+.hero .alt { color: var(--muted); margin: 0 0 20px; }
+.hero p.lead { font-size: 18px; color: var(--muted); max-width: 680px; margin: 0 0 24px; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500;
+  border: 1px solid var(--line); background: var(--surface); color: var(--text);
+}
+.btn:hover { text-decoration: none; border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn svg { width: 16px; height: 16px; }
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 40px 0 8px;
+}
+.stat {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px; box-shadow: var(--shadow);
+}
+.stat b { display: block; font-size: 26px; letter-spacing: -.02em; }
+.stat span { color: var(--muted); font-size: 13px; line-height: 1.4; display: block; }
+section { padding: 40px 0; border-top: 1px solid var(--line); }
+section h2 {
+  font: 500 13px/1 "JetBrains Mono", ui-monospace, monospace;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--faint); margin: 0 0 24px;
+}
+.about p { margin: 0 0 14px; max-width: 720px; }
+.skills { display: grid; grid-template-columns: 180px 1fr; gap: 14px 24px; }
+.skills dt { font-weight: 600; font-size: 14px; padding-top: 4px; }
+.skills dd { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  background: var(--chip); border-radius: 6px; padding: 3px 9px; font-size: 13px; color: var(--text);
+}
+.job { position: relative; padding-left: 24px; margin-bottom: 36px; }
+.job:last-child { margin-bottom: 0; }
+.job::before {
+  content: ""; position: absolute; left: 0; top: 8px; width: 9px; height: 9px;
+  border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft);
+}
+.job::after {
+  content: ""; position: absolute; left: 4px; top: 24px; bottom: -36px; width: 1px; background: var(--line);
+}
+.job:last-child::after { display: none; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: baseline; }
+.job h3 { margin: 0; font-size: 18px; letter-spacing: -.01em; }
+.job h3 .co { color: var(--accent); }
+.job .when { color: var(--faint); font-size: 14px; font-variant-numeric: tabular-nums; }
+.job .summary { color: var(--muted); margin: 6px 0 12px; }
+.job ul { margin: 0; padding-left: 18px; }
+.job li { margin: 6px 0; }
+.job li b { font-weight: 600; }
+.edu { display: grid; gap: 10px; }
+.edu div b { font-weight: 600; }
+.edu div span { color: var(--muted); }
+footer { padding: 32px 0 48px; color: var(--faint); font-size: 13px; border-top: 1px solid var(--line); }
+@media (max-width: 720px) {
+  nav .nav-links { display: none; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .skills { grid-template-columns: 1fr; gap: 6px; }
+  .skills dt { padding-top: 12px; }
+  .hero { padding-top: 40px; }
+}
+@media print {
+  @page { size: A4; margin: 14mm; }
+  :root, :root[data-theme="dark"] {
+    --bg: #fff; --surface: #fff; --text: #111; --muted: #444; --faint: #666;
+    --line: #ddd; --accent: #0f766e; --accent-soft: #ccfbf1; --chip: #f2f2f2; --shadow: none;
+  }
+  body { font-size: 11pt; }
+  header.top, .links, footer, .no-print { display: none !important; }
+  .hero { padding: 0 0 12px; }
+  .stats { margin: 16px 0 0; }
+  section { padding: 16px 0; break-inside: auto; }
+  .job { break-inside: avoid; margin-bottom: 18px; }
+  a { color: var(--text); }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Tom Pham</a>
+    <nav>
+      <span class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+      </span>
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch colour theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="role">Fullstack Engineer · Ho Chi Minh City</div>
+    <h1>Tom Pham</h1>
+    <p class="alt">Pham Van Toi</p>
+    <p class="lead">7+ years building web applications for enterprise clients in the UK, Japan and China. Strongest on the back end with PHP, Node.js and SQL; comfortable on the front end with Vue.js and TypeScript; at home on Microsoft Azure.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:tomiot8485@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        tomiot8485@gmail.com
+      </a>
+      <a class="btn" href="https://github.com/tom1097">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+        github.com/tom1097
+      </a>
+      <a class="btn" href="cv.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>
+        Download CV (PDF)
+      </a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>7+</b><span>years building web applications</span></div>
+      <div class="stat"><b>PHP 8.2</b><span>enterprise platform upgraded from 7.2</span></div>
+      <div class="stat"><b>~87 → 17</b><span>queries per page load after tuning</span></div>
+      <div class="stat"><b>1,000+</b><span>automated test cases built</span></div>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>Fullstack engineer with 7+ years building web applications for enterprise clients in the UK, Japan and China. Strongest on the back end: PHP (Laravel, Drupal, Yii, CodeIgniter) and Node.js, with REST APIs on SQL Server and MySQL. Comfortable on the front end with Vue.js (2 and 3) and TypeScript.</p>
+    <p>At Li &amp; Fung I modernise a large enterprise workflow platform: upgraded it to PHP 8.2, moved its databases to Azure, optimised performance, fixed penetration-test findings and built an automated suite of 1,000+ test cases. I also run AI coding agents in the team's delivery process. I work in English every day, in Agile/Scrum with Jira.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Technical skills</h2>
+    <dl class="skills">
+      <dt>Back end</dt>
+      <dd><span class="chip">PHP</span><span class="chip">Laravel 5–12</span><span class="chip">Yii</span><span class="chip">CodeIgniter 4</span><span class="chip">Drupal 7</span><span class="chip">EC-CUBE 4</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">TypeScript</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">FastAPI</span></dd>
+      <dt>Front end</dt>
+      <dd><span class="chip">Vue.js</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">HTML</span><span class="chip">CSS</span></dd>
+      <dt>Databases</dt>
+      <dd><span class="chip">Microsoft SQL Server</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">Azure Database for MySQL</span><span class="chip">Azure SQL</span><span class="chip">Stored procedures</span><span class="chip">Query optimisation</span><span class="chip">Eloquent</span><span class="chip">Sequelize</span></dd>
+      <dt>Cloud and DevOps</dt>
+      <dd><span class="chip">Azure App Service</span><span class="chip">Azure API Management</span><span class="chip">Logic Apps</span><span class="chip">Docker</span><span class="chip">Kubernetes (AKS)</span><span class="chip">Helm</span><span class="chip">Azure Pipelines CI/CD</span><span class="chip">Linux (CentOS, Ubuntu)</span><span class="chip">Bitbucket</span></dd>
+      <dt>APIs and integration</dt>
+      <dd><span class="chip">REST API design</span><span class="chip">Zod validation</span><span class="chip">Rate limiting</span><span class="chip">Token and session auth</span><span class="chip">Microsoft Graph API</span><span class="chip">LDAP / Azure AD SSO</span><span class="chip">Azure OpenAI</span></dd>
+      <dt>Testing and quality</dt>
+      <dd><span class="chip">PHPUnit</span><span class="chip">Jest</span><span class="chip">Mocha/Chai</span><span class="chip">Playwright</span><span class="chip">Selenium</span><span class="chip">Code review</span><span class="chip">Secure coding (XSS, access control)</span><span class="chip">DRY refactoring</span><span class="chip">Strategy and Factory patterns</span><span class="chip">Laravel Facades</span></dd>
+      <dt>AI and automation</dt>
+      <dd><span class="chip">GitHub Copilot</span><span class="chip">OpenAI Codex</span><span class="chip">Claude Code</span><span class="chip">n8n</span></dd>
+      <dt>Tools and process</dt>
+      <dd><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitLab</span><span class="chip">Bitbucket</span><span class="chip">Jira</span><span class="chip">Redmine</span><span class="chip">Agile/Scrum</span></dd>
+    </dl>
+  </section>
+
+  <section id="experience">
+    <h2>Work experience</h2>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Software Engineer · <span class="co">Li &amp; Fung</span></h3>
+        <span class="when">Apr 2024 – present</span>
+      </div>
+      <p class="summary">Build and maintain the group's internal workflow platform and staff apps: approvals, leave, expense and travel claims, car booking and business card orders. Stack: Drupal 7, Laravel REST API, Yii 1.1, MySQL and SQL Server on Microsoft Azure.</p>
+      <ul>
+        <li><b>Platform upgrade:</b> upgraded Drupal 7.75 to 7.103 and PHP 7.2 to 8.2. Fixed PHP 8 fatal errors and warnings across dozens of custom modules and database-stored pages without changing behaviour for users.</li>
+        <li><b>API development:</b> built and maintained REST APIs for three systems: the Laravel API behind the workflow platform (fixed its Laravel 12 rebuild: CSRF, model mapping, cached configuration), the OneTouch staff app API (Yii, PHP 8.2, token authentication) and the news portal's Express API (TypeScript, Zod validation, rate limiting).</li>
+        <li><b>Performance:</b> cut the approvals page from ~87 to ~17 database queries per load, and its data refresh from about 3 minutes to about 20–30 seconds by running web-service calls in parallel.</li>
+        <li><b>Cloud migration:</b> moved the MySQL databases to Azure Database for MySQL Flexible Server, with per-environment accounts.</li>
+        <li><b>Security:</b> fixed penetration-test findings: cross-site scripting (XSS), sensitive data exposed by PHP endpoints, and unauthorised access. Hardened the HTML sanitiser to block obfuscated script payloads.</li>
+        <li><b>Testing:</b> built automated PHPUnit tests for the Drupal modules and the Laravel API, plus Playwright smoke tests; the Drupal suite passes on PHP 7.4 and 8.2.</li>
+        <li><b>Market News AI portal:</b> built most of the news-feed back end (Express, TypeScript, Sequelize on Azure SQL): Bing and Google News search through a Strategy/Factory design, and AI article summaries with Azure OpenAI through Azure API Management. Wrote Jest tests.</li>
+        <li><b>n8n automation platform:</b> deployed n8n on Azure Kubernetes Service with custom Docker images, Helm charts and Azure Pipelines for build and deploy.</li>
+        <li><b>Integrations:</b> Azure App Service, Logic Apps and Microsoft Graph API.</li>
+        <li><b>AI-assisted delivery:</b> designed six scheduled AI coding agents that take labelled Jira tickets from analysis to a reviewed pull request, with human approval before merge.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Software Engineer · <span class="co">Nashtech</span></h3>
+        <span class="when">Mar 2022 – Apr 2024</span>
+      </div>
+      <p class="summary">Built a web platform for a UK company to manage vendor committees.</p>
+      <ul>
+        <li>Developed features end to end with Laravel, Vue.js and MySQL.</li>
+        <li>Wrote PHPUnit tests and fixed defects found in testing and production.</li>
+        <li>Worked in Agile sprints with the UK team, tracking work in Jira and Azure DevOps.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Software Engineer · <span class="co">ShinWay Software Development</span></h3>
+        <span class="when">Jul 2019 – Feb 2022</span>
+      </div>
+      <p class="summary">Delivered outsourced web applications and e-commerce sites for Japanese clients.</p>
+      <ul>
+        <li>Built and maintained projects in Laravel, Yii, CodeIgniter and EC-CUBE, with Vue.js front ends.</li>
+        <li>Designed schemas and queries in MySQL and PostgreSQL.</li>
+        <li>Set up and managed CentOS 7 VPS servers for deployment.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="education">
+    <h2>Education and languages</h2>
+    <div class="edu">
+      <div><b>Bachelor of Information Technology</b> <span>· Ho Chi Minh City University of Technology and Education, 2015 – 2019</span></div>
+      <div><b>Languages</b> <span>· English (professional working), Vietnamese (native)</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year">2026</span> Tom Pham · Ho Chi Minh City, Vietnam</div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  } catch (e) {}
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("theme").addEventListener("click", function () {
+    var current = root.getAttribute("data-theme");
+    if (!current) current = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    var next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
